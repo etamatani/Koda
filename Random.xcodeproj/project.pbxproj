@@ -93,6 +93,7 @@
 		EFF4E1302429216A00768F76 /* UpdatableDrawingClassifier+Updating.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4E12C2429216900768F76 /* UpdatableDrawingClassifier+Updating.swift */; };
 		EFF4E1312429216A00768F76 /* UpdatableDrawingClassifier+Prediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4E12D2429216A00768F76 /* UpdatableDrawingClassifier+Prediction.swift */; };
 		EFF4E13324292BD900768F76 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF4E13224292BD900768F76 /* ScanViewController.swift */; };
+		EFF69BD82462DFF400BFA2A9 /* CustomerIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF69BD72462DFF400BFA2A9 /* CustomerIDViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -187,6 +188,7 @@
 		EFF4E12C2429216900768F76 /* UpdatableDrawingClassifier+Updating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UpdatableDrawingClassifier+Updating.swift"; path = "../../../../CoreML/PersonalStickers/Model/UpdatableDrawingClassifier+Updating.swift"; sourceTree = "<group>"; };
 		EFF4E12D2429216A00768F76 /* UpdatableDrawingClassifier+Prediction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UpdatableDrawingClassifier+Prediction.swift"; path = "../../../../CoreML/PersonalStickers/Model/UpdatableDrawingClassifier+Prediction.swift"; sourceTree = "<group>"; };
 		EFF4E13224292BD900768F76 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		EFF69BD72462DFF400BFA2A9 /* CustomerIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerIDViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +277,7 @@
 				EF44CDD42442811C00E12695 /* POSColor.swift */,
 				EF44CDD52442811C00E12695 /* SheetPresentationController.swift */,
 				EF44CDD62442811C00E12695 /* AppFlowController.swift */,
+				EFF69BD72462DFF400BFA2A9 /* CustomerIDViewController.swift */,
 			);
 			name = POS;
 			path = Random/POS;
@@ -706,6 +709,7 @@
 				EFAF7B2323F72EB70020E7F9 /* ConsumerViewItemViewController.swift in Sources */,
 				EFDCEE5F23F49D4600E8C366 /* Item.swift in Sources */,
 				EF8FA45A24048227006C3AF5 /* Color.swift in Sources */,
+				EFF69BD82462DFF400BFA2A9 /* CustomerIDViewController.swift in Sources */,
 				EFF4E1292429212D00768F76 /* ImageMat.swift in Sources */,
 				EF44CDE22442811C00E12695 /* CustomizeDrinkViewController.swift in Sources */,
 				EF44CDE62442811C00E12695 /* CheckoutButton.swift in Sources */,

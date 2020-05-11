@@ -23,6 +23,8 @@ final class AppFlowController: UIViewController, AlertShowing {
 
     let editButton = UIButton(type: UIButton.ButtonType.system)
     var window: UIWindow?
+    
+    var theDrink: posItem?
 
     // MARK: - Init
 
@@ -44,9 +46,7 @@ final class AppFlowController: UIViewController, AlertShowing {
     override func viewDidLoad() {
         super.viewDidLoad()
         showDrinkSelection()
-        
         makeButton()
-
     }
     
     func makeButton() {
@@ -80,12 +80,17 @@ final class AppFlowController: UIViewController, AlertShowing {
     fileprivate func showCustomization(for drink: posItem) {
         let drinkCustomization = CustomizeDrinkViewController(drink: drink)
         
+        self.theDrink = drink
+        
         // CustomizeDrinkViewController will notify its delegate when the customer finishes customizing their drink by tapping the Check Out button, or when they cancel
         drinkCustomization.delegate = self
         present(drinkCustomization, animated: true, completion: nil)
     }
     
     fileprivate func checkOut(with order: DrinkOrder) {
+        dismiss(animated: true, completion: nil)
+        print()
+        customerId()
         do {
             let request = try makePointOfSaleAPIRequest(for: order)
             try SCCAPIConnection.perform(request)
@@ -102,19 +107,16 @@ final class AppFlowController: UIViewController, AlertShowing {
     }
     
     @objc func editTapped(_ sender: UIButton) {
-        
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let nextView = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.retailerTabBarController) as! RetailerTabBarController
         nextView.modalPresentationStyle = .fullScreen
         self.present(nextView, animated: false, completion: nil)
-        
     }
 }
 
 // MARK: - Select Drink Delegate
 
 extension AppFlowController: SelectDrinkViewControllerDelegate {
-    
     func selectDrinkViewControllerDidSelect(_ drink: posItem) {
         showCustomization(for: drink)
     }
@@ -127,6 +129,14 @@ extension AppFlowController: CustomizeDrinkViewControllerDelegate {
     func customizeDrinkViewControllerDidFinish(with order: DrinkOrder) {
         print(order)
         checkOut(with: order)
+    }
+    
+    func customerId() {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextView = storyboard.instantiateViewController(withIdentifier: Constants.Storyboard.customerIdViewController) as! CustomerIDViewController
+        nextView.modalPresentationStyle = .formSheet
+        nextView.drink = theDrink!
+        present(nextView, animated: true, completion: nil)
     }
 
     func customizeDrinkViewControllerDidCancel() {

@@ -64,6 +64,8 @@ struct Constants {
         
         static let scanedItemViewController = "ScanedItemViewController"
         
+        static let customerIdViewController = "CustomerIDViewController"
+        
     }
     
     struct SquareStoryboard {

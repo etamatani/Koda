@@ -125,7 +125,7 @@ extension ConsumerHomeViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+         
         // Get a photo cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.Storyboard.recentPurchaseCell, for: indexPath) as! RecentPurchaseViewCell
         

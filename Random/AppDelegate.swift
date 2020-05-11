@@ -69,7 +69,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let sourceApp = options[.sourceApplication] as? String, sourceApp.hasPrefix("com.squareup.square"),
             let response = try? SCCAPIResponse(responseURL: url) {
-
             return true
         }
         return false

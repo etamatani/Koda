@@ -31,7 +31,6 @@ class GetService {
             let snapshots = snapshot.children.allObjects as? [DataSnapshot]
             
             if let snapshots = snapshots {
-                
                 // Loop through each snapshot and parse out the photos
                 for snap in snapshots {
                     
